@@ -3,4 +3,14 @@
     <string name="main_button_A">A</string>
     <string name="main_button_B">B</string>
     <string name="main_button_Bb">B♭</string>
+    <string name="main_button_C">C</string>
+    <string name="main_button_Cs">C#</string>
+    <string name="main_button_D">D</string>
+    <string name="main_button_Ds">D#</string>
+    <string name="main_button_E">E</string>
+    <string name="main_button_F">F</string>
+    <string name="main_button_Fs">F#</string>
+    <string name="main_button_G">G</string>
+    <string name="main_button_Gs">G#</string>
+    <string name="main_button_song_1">Song 1</string>
 </resources>
