@@ -6,7 +6,9 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SoundBoardActivity extends AppCompatActivity implements View.OnClickListener {
     private Button buttonA;
@@ -23,6 +25,8 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private Button buttonGs;
 
     private Button buttonSongOne;
+    private Button buttonScale;
+    private int[] songArray;
 
     private int soundA;
     private int soundBb;
@@ -36,6 +40,8 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private int soundFs;
     private int soundG;
     private int soundGs;
+
+    private Map<Integer, Integer> noteMap;
 
     private SoundPool soundPool;
     boolean loaded = false;
@@ -66,6 +72,7 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         buttonGs = findViewById(R.id.button_Gs);
 
         buttonSongOne = findViewById(R.id.button_song_1);
+        buttonScale = findViewById(R.id.button_scale);
     }
 
     public void initializeSoundPool() {
@@ -91,10 +98,26 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         soundG = soundPool.load(this, R.raw.scaleg, 1);
         soundGs = soundPool.load(this, R.raw.scalegs, 1);
 
+        noteMap = new HashMap<>();
+        noteMap.put(buttonA.getId(), soundA);
+        noteMap.put(buttonB.getId(), soundB);
+        noteMap.put(buttonBb.getId(), soundBb);
+        noteMap.put(buttonC.getId(), soundC);
+        noteMap.put(buttonCs.getId(), soundCs);
+        noteMap.put(buttonD.getId(), soundD);
+        noteMap.put(buttonDs.getId(), soundDs);
+        noteMap.put(buttonE.getId(), soundE);
+        noteMap.put(buttonF.getId(), soundF);
+        noteMap.put(buttonFs.getId(), soundFs);
+        noteMap.put(buttonG.getId(), soundG);
+        noteMap.put(buttonGs.getId(), soundGs);
+
+
+
     }
 
     public void setLitseners() {
-        buttonA.setOnClickListener(new View.OnClickListener() {
+        /*buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (loaded) {
@@ -102,7 +125,6 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
                 }
             }
         });
-
         buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,7 +133,6 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
                 }
             }
         });
-
         buttonBb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,32 +142,128 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
             }
         });
 
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundC, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonCs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundCs, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundD, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonDs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundDs, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundE, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundF, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonFs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundFs, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundG, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+        buttonGs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loaded) {
+                    soundPool.play(soundGs, 1, 1, 1, 0, 1);
+                }
+            }
+        });
+*/
+        KeyboardListensers keyboardListensers = new KeyboardListensers();
+        buttonA.setOnClickListener(keyboardListensers);
+        buttonB.setOnClickListener(keyboardListensers);
+        buttonBb.setOnClickListener(keyboardListensers);
+        buttonC.setOnClickListener(keyboardListensers);
+        buttonCs.setOnClickListener(keyboardListensers);
+        buttonD.setOnClickListener(keyboardListensers);
+        buttonDs.setOnClickListener(keyboardListensers);
+        buttonE.setOnClickListener(keyboardListensers);
+        buttonF.setOnClickListener(keyboardListensers);
+        buttonFs.setOnClickListener(keyboardListensers);
+        buttonG.setOnClickListener(keyboardListensers);
+        buttonGs.setOnClickListener(keyboardListensers);
+
         buttonSongOne.setOnClickListener(this);
+        buttonScale.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_song_1: {
-                soundPool.play(soundC, 1,1,1,0,1);
-                delay(500);
-                soundPool.play(soundE, 1,1,1,0,1);
-                delay(750);
-                soundPool.play(soundC, 1,1,1,0,1);
-                delay(250);
-                soundPool.play(soundE, 1,1,1,0,1);
-                delay(2000);
-                soundPool.play(soundA, 1,1,1,0,1);
-                delay(500);
-                soundPool.play(soundC, 1,1,1,0,1);
-                delay(750);
-                soundPool.play(soundA, 1,1,1,0,1);
-                delay(250);
-                soundPool.play(soundBb, 1,1,1,0,1);
-                delay(2000);
-
 
                 break;
+            }
+            case R.id.button_scale: {
+                scale();
+            }
+        }
+    }
+
+    private void scale() {
+       int[] scale = {soundA, soundBb, soundB, soundC, soundCs, soundD, soundDs, soundE, soundF, soundFs, soundG, soundGs};
+       if (loaded) {
+           for (int i =0; i<12; i++) {
+               soundPool.play(scale[i],1,1,1,0,1);
+               delay(500);
+           }
+       }
+    }
+
+    private class KeyboardListensers implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            int songId = noteMap.get(view.getId());
+            if (songId != 0) {
+                soundPool.play(songId, 1, 1,1,0,1);
             }
         }
     }

@@ -12,5 +12,22 @@
     <string name="main_button_Fs">F#</string>
     <string name="main_button_G">G</string>
     <string name="main_button_Gs">G#</string>
+
+    <string name="main_button_High_A">High A</string>
+    <string name="main_button_High_B">High B</string>
+    <string name="main_button_High_Bb">High B♭</string>
+    <string name="main_button_High_C">High C</string>
+    <string name="main_button_High_Cs">High C#</string>
+    <string name="main_button_High_D">High D</string>
+    <string name="main_button_High_Ds">High D#</string>
+    <string name="main_button_High_E">High E</string>
+    <string name="main_button_High_F">High F</string>
+    <string name="main_button_High_Fs">High F#</string>
+    <string name="main_button_High_G">High G</string>
+    <string name="main_button_High_Gs">High G#</string>
+
     <string name="main_button_song_1">Song 1</string>
+    <string name="main_button_song_2">Song 2</string>
+    <string name="main_button_song_3">Song 3</string>
+    <string name="main_button_scale">Scale</string>
 </resources>
