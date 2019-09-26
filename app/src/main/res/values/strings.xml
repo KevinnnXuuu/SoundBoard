@@ -30,4 +30,6 @@
     <string name="main_button_song_2">Song 2</string>
     <string name="main_button_song_3">Song 3</string>
     <string name="main_button_scale">Scale</string>
+
+    <string name="main_switch_add_note">Add Note</string>
 </resources>
