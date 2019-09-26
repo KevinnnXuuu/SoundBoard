@@ -25,8 +25,8 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private Button buttonGs;
 
     private Button buttonSongOne;
+    private Note[] song1;
     private Button buttonScale;
-    private int[] songArray;
 
     private int soundA;
     private int soundBb;
@@ -41,6 +41,22 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private int soundG;
     private int soundGs;
 
+    private Note noteA;
+    private Note noteBb;
+    private Note noteB;
+    private Note noteC;
+    private Note noteCs;
+    private Note noteD;
+    private Note noteDs;
+    private Note noteE;
+    private Note noteF;
+    private Note noteFs;
+    private Note noteG;
+    private Note noteGs;
+
+
+
+
     private Map<Integer, Integer> noteMap;
 
     private SoundPool soundPool;
@@ -54,6 +70,28 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         wireWidgets();
         initializeSoundPool();
         setLitseners();
+        initializeNotes();
+
+    }
+
+    private void initializeNotes() {
+        noteA = new Note(soundA,200);
+        noteBb = new Note(soundBb,200);
+        noteB = new Note(soundB,200);
+        noteC = new Note(soundC,200);
+        noteCs = new Note(soundCs,200);
+        noteD = new Note(soundD,200);
+        noteDs = new Note(soundDs,200);
+        noteE = new Note(soundE,200);
+        noteF = new Note(soundF,200);
+        noteFs = new Note(soundFs,200);
+        noteG = new Note(soundG,200);
+        noteGs = new Note(soundGs,200);
+
+        song1 = new Note[] {noteB, noteC, noteB, noteC, noteB, noteC, noteB, noteC, noteB, noteC, noteB, noteC, noteB, noteC, noteB, noteC, noteB, noteC,
+                            noteD, noteF, noteD, noteF, noteD, noteF, noteD, noteF, noteD, noteF, noteD, noteF, noteD, noteF, noteD, noteF, noteD, noteF,
+                            noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs,
+                           noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, noteFs, noteGs, };
 
     }
 
@@ -111,7 +149,6 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         noteMap.put(buttonFs.getId(), soundFs);
         noteMap.put(buttonG.getId(), soundG);
         noteMap.put(buttonGs.getId(), soundGs);
-
 
 
     }
@@ -238,7 +275,7 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_song_1: {
-
+                playNote(song1);
                 break;
             }
             case R.id.button_scale: {
@@ -248,13 +285,13 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void scale() {
-       int[] scale = {soundA, soundBb, soundB, soundC, soundCs, soundD, soundDs, soundE, soundF, soundFs, soundG, soundGs};
-       if (loaded) {
-           for (int i =0; i<12; i++) {
-               soundPool.play(scale[i],1,1,1,0,1);
-               delay(500);
-           }
-       }
+        int[] scale = {soundA, soundBb, soundB, soundC, soundCs, soundD, soundDs, soundE, soundF, soundFs, soundG, soundGs};
+        if (loaded) {
+            for (int i = 0; i < 12; i++) {
+                soundPool.play(scale[i], 1, 1, 1, 0, 1);
+                delay(200);
+            }
+        }
     }
 
     private class KeyboardListensers implements View.OnClickListener {
@@ -263,7 +300,7 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         public void onClick(View view) {
             int songId = noteMap.get(view.getId());
             if (songId != 0) {
-                soundPool.play(songId, 1, 1,1,0,1);
+                soundPool.play(songId, 1, 1, 1, 0, 1);
             }
         }
     }
@@ -274,7 +311,13 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
     }
+
+    public void playNote(Note[] song) {
+        for (Note note : song) {
+            soundPool.play(note.getSoundID(), 1, 1, 1, 0, 1);
+            delay(note.getTimeDelayed());
+        }
+    }
+
 }
