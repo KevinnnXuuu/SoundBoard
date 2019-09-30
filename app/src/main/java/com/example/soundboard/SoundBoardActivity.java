@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +31,8 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private Button buttonGs;
 
     private Button buttonSongOne;
-    private Note[] song1;
+    private ArrayList<Note> song1;
+    private ArrayList<Note> song1edit;
     private Button buttonScale;
 
     private int soundA;
@@ -94,7 +96,14 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         noteG = new Note(soundG,200);
         noteGs = new Note(soundGs,200);
 
-        song1 = new Note[] {noteG, noteE, noteG, noteE, noteA};
+        ArrayList<Note> song1 = new ArrayList<>();
+        song1.add(noteG);
+        song1.add(noteG);
+        song1.add(noteE);
+        song1.add(noteG);
+        song1.add(noteE);
+        song1.add(noteA);
+        song1edit = song1;
 
     }
 
@@ -193,7 +202,7 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_song_1: {
-                playNote(song1);
+                playNote(song1edit);
                 break;
             }
             case R.id.button_scale: {
@@ -235,7 +244,7 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public void playNote(Note[] song) {
+    public void playNote(ArrayList<Note> song) {
         for (Note note: song) {
             soundPool.play(note.getSoundID(), 1, 1, 1, 0, 1);
             delay(note.getTimeDelayed());
@@ -243,7 +252,8 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     }
 
     public void addNote(int soundAdded) {
-        song1[song1.length] = new Note(soundAdded, 200);
+        Note noteAdded = new Note(soundAdded, 200);
+        song1edit.add(noteAdded);
     }
 
 }
