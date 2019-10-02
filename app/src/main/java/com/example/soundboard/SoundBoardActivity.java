@@ -29,6 +29,18 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private Button buttonFs;
     private Button buttonG;
     private Button buttonGs;
+    private Button buttonHighA;
+    private Button buttonHighBb;
+    private Button buttonHighB;
+    private Button buttonHighC;
+    private Button buttonHighCs;
+    private Button buttonHighD;
+    private Button buttonHighDs;
+    private Button buttonHighE;
+    private Button buttonHighF;
+    private Button buttonHighFs;
+    private Button buttonHighG;
+    private Button buttonHighGs;
 
     private Button buttonSongOne;
     private Button buttonSongUsermade;
@@ -49,6 +61,18 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private int soundFs;
     private int soundG;
     private int soundGs;
+    private int soundHighA;
+    private int soundHighBb;
+    private int soundHighB;
+    private int soundHighC;
+    private int soundHighCs;
+    private int soundHighD;
+    private int soundHighDs;
+    private int soundHighE;
+    private int soundHighF;
+    private int soundHighFs;
+    private int soundHighG;
+    private int soundHighGs;
 
     private Note noteA;
     private Note noteBb;
@@ -62,6 +86,18 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private Note noteFs;
     private Note noteG;
     private Note noteGs;
+    private Note noteHighA;
+    private Note noteHighBb;
+    private Note noteHighB;
+    private Note noteHighC;
+    private Note noteHighCs;
+    private Note noteHighD;
+    private Note noteHighDs;
+    private Note noteHighE;
+    private Note noteHighF;
+    private Note noteHighFs;
+    private Note noteHighG;
+    private Note noteHighGs;
 
     private Switch switchAddNotes;
     private Switch switchRecord;
@@ -88,12 +124,132 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
 
     private void initializeSongs() {
         ArrayList<Note> song1 = new ArrayList<>();
-        song1.add(noteG);
-        song1.add(noteG);
+        song1.add(noteHighD);
+        song1.add(noteHighE);
+        song1.add(noteHighD);
+        song1.add(noteHighE);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteD);
+        delay(150);
+        song1.add(noteHighD);
+        delay(150);
+        song1.add(noteHighB);
+        song1.add(noteHighD);
+        song1.add(noteHighB);
+        song1.add(noteHighD);
+        song1.add(noteFs);
+        delay(150);
+        song1.add(noteHighA);
+        delay(150);
+        song1.add(noteFs);
+        song1.add(noteHighA);
         song1.add(noteE);
-        song1.add(noteG);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteHighD);
+        song1.add(noteHighB);
+        song1.add(noteHighA);
+        song1.add(noteFs);
         song1.add(noteE);
-        song1.add(noteA);
+        song1.add(noteD);
+        song1.add(noteE);
+        song1.add(noteHighD);
+        song1.add(noteHighE);
+        song1.add(noteHighD);
+        song1.add(noteHighE);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteFs);
+        song1.add(noteHighA); //line 1
+
+        song1.add(noteD);
+        delay(150);
+        song1.add(noteHighD);
+        delay(150);
+        song1.add(noteHighB);
+        song1.add(noteHighD);
+        song1.add(noteHighB);
+        song1.add(noteHighD);
+        song1.add(noteFs);
+        delay(150);
+        song1.add(noteHighA);
+        delay(150);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteE);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        delay(150);
+        song1.add(noteHighD);
+        delay(150);
+        song1.add(noteD);
+        delay(300);
+        song1.add(noteHighD);
+        song1.add(noteHighE);
+        song1.add(noteHighD);
+        song1.add(noteHighE);
+        song1.add(noteHighFs);
+        delay(150);
+        song1.add(noteHighFs);
+        delay(150);
+        song1.add(noteHighE);
+        song1.add(noteHighFs);
+        song1.add(noteHighE);
+        song1.add(noteHighFs);
+        song1.add(noteHighGs);
+        delay(150);
+        song1.add(noteHighGs);
+        delay(150);
+        song1.add(noteHighGs);
+        delay(150);
+        song1.add(noteHighE);
+        delay(150);
+        song1.add(noteHighFs);
+        song1.add(noteHighGs);
+        song1.add(noteHighFs);
+        song1.add(noteHighE); //line 2
+
+        song1.add(noteHighD);
+        song1.add(noteHighFs);
+        song1.add(noteHighE);
+        song1.add(noteHighD);
+        song1.add(noteHighA);
+        delay(150);
+        song1.add(noteHighA);
+        delay(150);
+        song1.add(noteHighB);
+        song1.add(noteHighD);
+        song1.add(noteHighB);
+        song1.add(noteHighD);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteD);
+        song1.add(noteE);
+        song1.add(noteFs);
+        song1.add(noteHighA);
+        song1.add(noteE);
+        song1.add(noteHighA);
+        song1.add(noteFs);
+        song1.add(noteE);
+        song1.add(noteD);
+        song1.add(noteHighD);
+        song1.add(noteHighB);
+        song1.add(noteHighD);
+        song1.add(noteE);
+        song1.add(noteHighA);
+        song1.add(noteFs);
+        song1.add(noteE);
+        song1.add(noteD);
+        delay(150);
+        song1.add(noteHighD);
+        delay(200);
+        song1.add(noteD);
+
         song1edit = song1;
 
         ArrayList<Note> songUser = new ArrayList<>();
@@ -101,18 +257,30 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void initializeNotes() {
-        noteA = new Note(soundA,200);
-        noteBb = new Note(soundBb,200);
-        noteB = new Note(soundB,200);
-        noteC = new Note(soundC,200);
-        noteCs = new Note(soundCs,200);
-        noteD = new Note(soundD,200);
-        noteDs = new Note(soundDs,200);
-        noteE = new Note(soundE,200);
-        noteF = new Note(soundF,200);
-        noteFs = new Note(soundFs,200);
-        noteG = new Note(soundG,200);
-        noteGs = new Note(soundGs,200);
+        noteA = new Note(soundA,150);
+        noteBb = new Note(soundBb,150);
+        noteB = new Note(soundB,150);
+        noteC = new Note(soundC,150);
+        noteCs = new Note(soundCs,150);
+        noteD = new Note(soundD,150);
+        noteDs = new Note(soundDs,150);
+        noteE = new Note(soundE,150);
+        noteF = new Note(soundF,150);
+        noteFs = new Note(soundFs,150);
+        noteG = new Note(soundG,150);
+        noteGs = new Note(soundGs,150);
+        noteHighA = new Note(soundHighA,150);
+        noteHighBb = new Note(soundHighBb,150);
+        noteHighB = new Note(soundHighB,150);
+        noteHighC = new Note(soundHighC,150);
+        noteHighCs = new Note(soundHighCs,150);
+        noteHighD = new Note(soundHighD,150);
+        noteHighDs = new Note(soundHighDs,150);
+        noteHighE = new Note(soundHighE,150);
+        noteHighF = new Note(soundHighF,150);
+        noteHighFs = new Note(soundHighFs,150);
+        noteHighG = new Note(soundHighG,150);
+        noteHighGs = new Note(soundHighGs,150);
     }
 
     public void wireWidgets() {
@@ -128,6 +296,18 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         buttonFs = findViewById(R.id.button_Fs);
         buttonG = findViewById(R.id.button_G);
         buttonGs = findViewById(R.id.button_Gs);
+        buttonHighA = findViewById(R.id.button_high_A);
+        buttonHighBb = findViewById(R.id.button_high_Bb);
+        buttonHighB = findViewById(R.id.button_high_B);
+        buttonHighC = findViewById(R.id.button_high_C);
+        buttonHighCs = findViewById(R.id.button_high_Cs);
+        buttonHighD = findViewById(R.id.button_high_D);
+        buttonHighDs = findViewById(R.id.button_high_Ds);
+        buttonHighE = findViewById(R.id.button_high_E);
+        buttonHighF = findViewById(R.id.button_high_F);
+        buttonHighFs = findViewById(R.id.button_high_Fs);
+        buttonHighG = findViewById(R.id.button_high_G);
+        buttonHighGs = findViewById(R.id.button_high_Gs);
 
         buttonSongOne = findViewById(R.id.button_song_1);
         buttonSongUsermade = findViewById((R.id.button_song_user));
@@ -158,6 +338,18 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         soundFs = soundPool.load(this, R.raw.scalefs, 1);
         soundG = soundPool.load(this, R.raw.scaleg, 1);
         soundGs = soundPool.load(this, R.raw.scalegs, 1);
+        soundHighA = soundPool.load(this, R.raw.scalehigha, 1);
+        soundHighBb = soundPool.load(this, R.raw.scalehighbb, 1);
+        soundHighB = soundPool.load(this, R.raw.scalehighb, 1);
+        soundHighC = soundPool.load(this, R.raw.scalehighc, 1);
+        soundHighCs = soundPool.load(this, R.raw.scalehighcs, 1);
+        soundHighD = soundPool.load(this, R.raw.scalehighd, 1);
+        soundHighDs = soundPool.load(this, R.raw.scalehighds, 1);
+        soundHighE = soundPool.load(this, R.raw.scalehighe, 1);
+        soundHighF = soundPool.load(this, R.raw.scalehighf, 1);
+        soundHighFs = soundPool.load(this, R.raw.scalehighfs, 1);
+        soundHighG = soundPool.load(this, R.raw.scalehighg, 1);
+        soundHighGs = soundPool.load(this, R.raw.scalehighgs, 1);
 
         noteMap = new HashMap<>();
         noteMap.put(buttonA.getId(), soundA);
@@ -172,6 +364,18 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         noteMap.put(buttonFs.getId(), soundFs);
         noteMap.put(buttonG.getId(), soundG);
         noteMap.put(buttonGs.getId(), soundGs);
+        noteMap.put(buttonHighA.getId(), soundHighA);
+        noteMap.put(buttonHighB.getId(), soundHighB);
+        noteMap.put(buttonHighBb.getId(), soundHighBb);
+        noteMap.put(buttonHighC.getId(), soundHighC);
+        noteMap.put(buttonHighCs.getId(), soundHighCs);
+        noteMap.put(buttonHighD.getId(), soundHighD);
+        noteMap.put(buttonHighDs.getId(), soundHighDs);
+        noteMap.put(buttonHighE.getId(), soundHighE);
+        noteMap.put(buttonHighF.getId(), soundHighF);
+        noteMap.put(buttonHighFs.getId(), soundHighFs);
+        noteMap.put(buttonHighG.getId(), soundHighG);
+        noteMap.put(buttonHighGs.getId(), soundHighGs);
     }
 
     public void setLitseners() {
@@ -188,6 +392,18 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         buttonFs.setOnClickListener(keyboardListensers);
         buttonG.setOnClickListener(keyboardListensers);
         buttonGs.setOnClickListener(keyboardListensers);
+        buttonHighA.setOnClickListener(keyboardListensers);
+        buttonHighB.setOnClickListener(keyboardListensers);
+        buttonHighBb.setOnClickListener(keyboardListensers);
+        buttonHighC.setOnClickListener(keyboardListensers);
+        buttonHighCs.setOnClickListener(keyboardListensers);
+        buttonHighD.setOnClickListener(keyboardListensers);
+        buttonHighDs.setOnClickListener(keyboardListensers);
+        buttonHighE.setOnClickListener(keyboardListensers);
+        buttonHighF.setOnClickListener(keyboardListensers);
+        buttonHighFs.setOnClickListener(keyboardListensers);
+        buttonHighG.setOnClickListener(keyboardListensers);
+        buttonHighGs.setOnClickListener(keyboardListensers);
 
         buttonSongOne.setOnClickListener(this);
         buttonSongUsermade.setOnClickListener(this);
@@ -227,9 +443,12 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void scale() {
-        int[] scale = {soundA, soundBb, soundB, soundC, soundCs, soundD, soundDs, soundE, soundF, soundFs, soundG, soundGs};
+        int[] scale = {soundA, soundBb, soundB, soundC, soundCs, soundD,
+                       soundDs, soundE, soundF, soundFs, soundG, soundGs,
+                       soundHighA, soundHighBb, soundHighB, soundHighC, soundHighCs, soundHighD,
+                       soundHighDs, soundHighE, soundHighF, soundHighFs, soundHighG, soundHighGs,};
         if (loaded) {
-            for (int i = 0; i < 12; i++) {
+            for (int i = 0; i < 24; i++) {
                 soundPool.play(scale[i], 1, 1, 1, 0, 1);
                 delay(200);
             }
