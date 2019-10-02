@@ -34,4 +34,6 @@
 
     <string name="main_switch_add_note">Add to Song 1</string>
     <string name="main_switch_record_note">Record Song</string>
+
+    <string name="textview_warning">One Switch at a time</string>
 </resources>

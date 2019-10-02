@@ -84,7 +84,6 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         setLitseners();
         initializeNotes();
         initializeSongs();
-
     }
 
     private void initializeSongs() {
@@ -96,6 +95,9 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         song1.add(noteE);
         song1.add(noteA);
         song1edit = song1;
+
+        ArrayList<Note> songUser = new ArrayList<>();
+        songUsermade = songUser;
     }
 
     private void initializeNotes() {
@@ -111,18 +113,6 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         noteFs = new Note(soundFs,200);
         noteG = new Note(soundG,200);
         noteGs = new Note(soundGs,200);
-
-        ArrayList<Note> song1 = new ArrayList<>();
-        song1.add(noteG);
-        song1.add(noteG);
-        song1.add(noteE);
-        song1.add(noteG);
-        song1.add(noteE);
-        song1.add(noteA);
-        song1edit = song1;
-
-        ArrayList<Note> songUser = new ArrayList<>();
-        songUsermade = songUser;
     }
 
     public void wireWidgets() {
@@ -280,9 +270,11 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         Note noteAdded = new Note(soundAdded, 200);
         if (adding) {
             song1edit.add(noteAdded);
+            Toast.makeText(this, noteAdded.getSoundID() + " Added", LENGTH_SHORT ).show();
         }
         else if(recording) {
             songUsermade.add(noteAdded);
+            Toast.makeText(this, noteAdded.getSoundID() + " Recorded", LENGTH_SHORT ).show();
         }
     }
 
